@@ -80,6 +80,10 @@ function createCard(v, t, ti, d) {
   // push card to cardList
   cardList.push(card);
   addCardToPage(cardList);
+  // update balance
+  if (card.type.slice(0, 6) != "invest") {
+    budget(card.value);
+  }
   // save card
   saveCard(cardList);
 }
@@ -133,7 +137,7 @@ function addCardToPage(cardList) {
       } else {
         icon.className = "fa fa-coins danger";
       }
-      budget(card.value);
+      // budget(card.value); // old
     } else {
       if (card.value >= 0) {
         icon.className = "fa fa-coins warning";
