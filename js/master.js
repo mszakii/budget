@@ -6,7 +6,7 @@ if (localStorage.getItem("money")) {
   
   dollar.innerHTML = `${Math.round(localStorage.money / currencyValue)}$`;
 } else {
-  localStorage.getItem("money", 0);
+  localStorage.setItem("money", 0);
 }
 
 
@@ -50,6 +50,14 @@ let cardList = [];
 
 if (localStorage.getItem("card")) {
   cardList = JSON.parse(localStorage.getItem("card"));
+}
+
+function budget(valueX) {
+  localStorage.money = Number(localStorage.money) + Number(valueX);
+    
+  value.innerHTML = `${localStorage.money}£`;
+    
+  dollar.innerHTML = `${Math.round(localStorage.money / currencyValue)}$`;
 }
 
 getSavedCards();
@@ -118,19 +126,15 @@ function addCardToPage(cardList) {
     } else if (card.type.slice(0,8) == "cash out") {
       icon.className = "fa fa-coins danger";
     } else if (card.type == "") {
-      card.type = "cash";
+      card.type = "balance";
       
       if (card.value >= 0) {
         icon.className = "fa fa-coins warning";
       } else {
         icon.className = "fa fa-coins danger";
       }
+      budget(card.value);
     } else {
-      if (card.value >= 0) {
-        icon.className = "fa fa-coins warning";
-      } else {
-        icon.className = "fa fa-coins danger";
-      }
       if (card.value >= 0) {
         icon.className = "fa fa-coins warning";
       } else {
