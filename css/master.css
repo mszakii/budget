@@ -1,0 +1,241 @@
+:root {
+  --background: #E9E9F5;
+  --main-color: #F7F7FF;
+  --primary: #4D66E5;
+  --danger: #FF2C55;
+  --warning: #FFCC01;
+  --plant: #4CE163;
+  --color: #1F1F1F;
+  --padding: 10px 15px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: rgb(13,13,13);
+    --main-color: #1D1D1F;
+    --primary: #0179FF;
+    --danger: #FF2C55;
+    --warning: #FFCC01;
+    --plant: #4CE163;
+    --color: white;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  color: var(--color);
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  font-size: 18px;
+  font-family: 'Nunito', Sans-Serif;
+}
+
+/* frame */
+.label {
+  font-size: .75rem;
+  font-weight: light;
+  letter-spacing: 1px;
+}
+/* frame */
+
+header {
+  /*display: flex;*/
+  /*justify-content: space-between;*/
+  /*align-items: center;*/
+  padding: var(--padding);
+  background: var(--primary);
+  /*height: 15vh;*/
+  height: 120px;
+  position: relative;
+}
+
+header .center {
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+main {
+  width: 85vw;
+  margin: auto;
+  background: var(--main-color);
+  border-radius: 5px;
+  padding: var(--padding);
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+main .budget {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+span.fa-plus-circle, span.fa-minus-circle {
+  display: block;
+  font-size: 1.75rem;
+  color: var(--primary);
+  margin: 5px 0;
+}
+
+span.fa-minus-circle {
+  color: var(--danger);
+}
+
+main .budget .left .value {
+  font-size: 3rem;
+}
+
+.sub {
+  margin: 60px auto;
+  width: 85vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.l-sec, .r-sec {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40vw;
+  background: var(--main-color);
+  border-radius: 5px;
+  padding: var(--padding);
+}
+
+.l-sec i.fa-arrow-trend-up {
+  color: var(--plant);
+  /*animation: stock 1s linear infinite;*/
+}
+
+@keyframes stock {
+  0%, 100% {
+    color: var(--danger);
+  }
+  50% {
+    color: var(--plant);
+  }
+}
+
+i.fa-bitcoin {
+  color: var(--warning);
+}
+
+.notifications {
+  width: 85vw;
+  margin: -40px auto;
+}
+
+.notifications h2 {
+  font-weight: 400;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+}
+
+.notifications .new {
+  margin: 10px 0;
+  /*display: grid;
+  grid-template-columns: 4fr auto;*/
+  display: flex;
+  justify-content: space-between;
+}
+
+#type {
+  width: 40%;
+  border-radius: 0 5px 5px 0;
+  border-left: .5px solid var(--color);
+}
+
+#newCash {
+  width: 60%;
+  border-radius: 5px 0 0 5px;
+  border-right: .5px solid var(--color);
+}
+
+.notifications .new input,
+.notifications .new select {
+  background: var(--main-color);
+  border: 0;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.notifications .new input {
+  padding: 5px 10px;
+  font-size: 1rem;
+}
+
+.notifications .new input:focus,
+.notifications .new select:focus {
+  outline: none;
+}
+
+.notifications .cards {
+  padding-bottom: 50px;
+}
+
+.notifications .card {
+  width: 100%;
+  border-radius: 5px;
+  background: var(--main-color);
+  padding: var(--padding);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.notifications .card i {
+  font-size: 1.5rem;
+  color: var(--main-color);
+  /*background: var(--warning);*/
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.notifications .card i.primary {
+  background: var(--primary);
+}
+
+.notifications .card i.warning {
+  background: var(--warning);
+}
+
+.notifications .card i.danger {
+  background: var(--danger);
+}
+
+.notifications .card i.plant {
+  background: var(--plant);
+}
+
+.notifications .card .value {
+  font-size: 2rem;
+}
+
+.notifications .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.notifications .card .date,
+.notifications .card .time {
+  font-size: .75rem;
+}
+
+.plus {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+}
+
+.plus i {
+  font-size: 3rem;
+  color: var(--primary);
+}

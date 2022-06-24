@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--  css  -->
+  <link rel="stylesheet" href="css/master.css" />
+  <!-- fonts  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+  <!--  icons  -->
+  <link rel="stylesheet" href="../fonts/css/all.min.css">
+  <title>BUDGET</title>
+</head>
+<body>
+  <!--header-->
+  <header>
+    <div class="left" onclick="window.close()"><i class="fa fa-arrow-left-long"></i></div>
+    <div class="center">budget</div>
+  </header>
+  <!--main-->
+  <main>
+    <div class="budget">
+      <div class="left">
+        <div class="label">balance</div>
+        <div class="value" id="value">0£</div>
+      </div>
+      <div class="right">
+        <span class="fa fa-plus-circle" id="plus"></span>
+        <span class="fa fa-minus-circle" id="minus"></span>
+      </div>
+    </div>
+  </main>
+  <div class="sub">
+    <!--l-sec-->
+    <section class="l-sec">
+      <!--left-->
+      <div class="left">
+        <div class="label">invest</div>
+        <div class="value"><span id="invest">0</span>£ share</div>
+      </div>
+      <!--right-->
+      <div class="right"><i class="fa fa-arrow-trend-up" id="trend"></i></div>
+    </section>
+    <!--r-sec-->
+    <section class="r-sec">
+      <div class="left">
+        <div class="label">dollar</div>
+        <div class="value" id="dollar">0$</div>
+      </div>
+      <div class="right"><i class="fa-brands fa-bitcoin"></i></div>
+    </section>
+  </div>
+  <!--notifications-->
+  <section class="notifications">
+    <h2>notification</h2>
+    <div class="new">
+      <input type="number" name="newCash" id="newCash" placeholder="Eg. 100">
+      <!--<select name="type" id="type">
+        <option value="cashP">cash +</option>
+        <option value="cashN">cash -</option>
+        <option value="invest">invest</option>
+      </select>-->
+      <input type="text" name="type" id="type" placeholder="Eg. invest">
+    </div>
+    <div class="cards" id="cards">
+      <!--<div class="card">
+        <div class="left">
+          <div class="label">cash</div>
+          <div class="value">50£</div>
+          <div class="time">10:31</div>
+        </div>
+        <div class="right">
+          <i class="fa fa-coins"></i>
+          <div class="date">11/11/2022</div>
+        </div>
+      </div>-->
+    </div>
+  </section>
+  <!--plus-->
+  <div class="plus" id="newCard">
+    <i class="fa fa-plus-circle"></i>
+  </div>
+<!--script-->
+<script src="js/master.js"></script>
+</body>
+</html>
